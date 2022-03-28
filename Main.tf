@@ -1,13 +1,15 @@
 terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
+      version  = "~> 2.13.0"
+
     }
     random = {
-      source  = "hashicorp/random"
+      version = ">= 2.1.2"
     }
   }
-
+  
+  required_version = "~> 1.1.7"
   cloud {
   organization = "AWS-DataalgebraCloud"
 
