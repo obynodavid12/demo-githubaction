@@ -23,7 +23,7 @@ provider "random" {}
 
 ## Provider us-east-2
 provider "aws" {
-    version = "4.8.0"
+    version = ">= 0.13.5"
     region  = "us-east-2"
 }
 
