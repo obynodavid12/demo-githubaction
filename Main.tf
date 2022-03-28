@@ -13,7 +13,7 @@ terraform {
   cloud {
   organization = "AWS-DataalgebraCloud"
 
-    workspace {
+    workspaces {
       name = "AWS-DataalgebraCloud"
     }
   }
