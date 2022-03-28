@@ -1,5 +1,5 @@
 ## Random
-resource "dev-project" "sg" {}
+#resource "dev-project" "sg" {}
 
 ## AWS VPC
 resource "aws_vpc" "awsec2demo-vpc" {
