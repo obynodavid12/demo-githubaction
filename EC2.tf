@@ -10,7 +10,7 @@ resource "aws_vpc" "awsec2demo-vpc" {
 }
 ## AWS VPC Subnet
 resource "aws_subnet" "awsec2demo" {
-  vpc_id            = aws_vpc.awsec2demo.id
+  vpc_id            = aws_vpc.awsec2demo-vpc.id
   cidr_block        = "172.16.10.0/24"
   availability_zone = "us-east-2a"
   tags = {
@@ -33,7 +33,7 @@ resource "aws_network_interface" "awsec2demo" {
 resource "aws_security_group" "awsec2demo" {
   name = "awsec2demo_sg_traffic"
   description = "Allow SSH connection"
-  vpc_id      = aws_vpc.awsec2demo.id
+  vpc_id      = aws_vpc.awsec2demo-vpc.id
   ingress {
     from_port   = 22
     to_port     = 22
@@ -63,8 +63,6 @@ resource "aws_instance" "awsec2demo" {
     device_index         = 0
   }
 }           
-
-
 
 
 
