@@ -25,6 +25,7 @@ provider "random" {}
 provider "aws" {
     version = ">= 0.13.5"
     region  = "us-east-2"
+    profile = "kopsuser"
 }
 
 
