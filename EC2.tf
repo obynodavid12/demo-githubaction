@@ -12,7 +12,7 @@ resource "aws_vpc" "awsec2demo-vpc" {
 resource "aws_subnet" "awsec2demo" {
   vpc_id            = aws_vpc.awsec2demo-vpc.id
   cidr_block        = "172.16.10.0/24"
-  availability_zone = "us-east-2a"
+  #availability_zone = "us-east-2a"
   tags = {
     Name = "subnet-dataalgebra"
   }
