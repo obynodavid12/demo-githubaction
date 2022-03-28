@@ -2,14 +2,13 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.63"
+      #version = "~> 3.63"
     }
     random = {
       source = "hashicorp/aws"
-      version = ">=3.0.0"
+    #  version = ">=3.0.0"
     }     
   }
-  required_version = "~> 1.1.7"
   
   cloud {
   organization = "Dataalgebra-Cloud"
@@ -26,6 +25,7 @@ provider "random" {}
 ## Provider us-east-2
 provider "aws" {
   region = "us-east-2"
+}
 }
 
 
