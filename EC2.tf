@@ -38,9 +38,6 @@ resource "aws_security_group" "awsec2demo" {
     protocol    = "tcp"
     cidr_blocks = ["68.83.212.136/32"]
 
-  tags = {
-    Name         = "allow-ssh"
-
   }
 }
 
