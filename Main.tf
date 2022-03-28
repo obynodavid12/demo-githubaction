@@ -20,7 +20,7 @@ terraform {
 }
 
 ## random provider
-provider "random" {}
+##provider "random" {}
 
 ## Provider us-east-2
 provider "aws" {
