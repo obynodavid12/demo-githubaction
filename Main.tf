@@ -9,7 +9,7 @@ terraform {
       version = ">=3.0.0"
     }     
   }
-  required_version = "~> 1.1.7"
+  
   cloud {
   organization = "Dataalgebra-Cloud"
 
@@ -24,6 +24,7 @@ provider "random" {}
 
 ## Provider us-east-2
 provider "aws" {
+  version = ">= 3.53.0"
   region = "us-east-2"
 }
 
