@@ -22,7 +22,7 @@ resource "aws_subnet" "awsec2demo" {
 resource "aws_network_interface" "awsec2demo" {
   subnet_id   = aws_subnet.awsec2demo.id
   private_ips = ["172.16.10.100"]
-  security_groups = [aws_security_group.allow_web.id]
+  security_groups = [aws_security_group.allow_ssh.id]
 
   tags = {
     Name = "NI-dataalgebra"
