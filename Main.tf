@@ -15,7 +15,6 @@ terraform {
       name = "AWS-DataalgebraCloud"
     }
   }
-}
 
 ## random provider
 provider "random" {}
