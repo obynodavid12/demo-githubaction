@@ -30,8 +30,8 @@ resource "aws_network_interface" "awsec2demo" {
 }
 
 ## AWS Security Group
-resource "aws_security_group" "awsec2demo" {
-  name = "awsec2demo_sg_traffic"
+resource "aws_security_group" "allow_ssh" {
+  name = "allow_ssh_traffic"
   description = "Allow SSH connection"
   vpc_id      = aws_vpc.awsec2demo-vpc.id
   ingress {
