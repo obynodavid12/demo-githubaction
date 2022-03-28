@@ -19,7 +19,7 @@ resource "aws_subnet" "awsec2demo" {
 }
 
 ## AWS Network Interface
-resources "aws_network_interface" "awsec2demo" {
+resource "aws_network_interface" "awsec2demo" {
   subnet_id   = aws_subnet.awsec2demo.id
   private_ips = ["172.16.10.100"]
 
