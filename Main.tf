@@ -4,11 +4,17 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 3.63"
     }
-  }  
+    random = {
+      source = "hashicorp/aws"
+      version = ">=3.0.0"
+    }     
+  }
+  required_version = "~> 1.1.7"
+  
   cloud {
   organization = "Dataalgebra-Cloud"
 
-    workspaces {
+    workspace {
       name = "AWS-DataalgebraCloud"
     }
   }
@@ -19,9 +25,10 @@ provider "random" {}
 
 ## Provider us-east-2
 provider "aws" {
-##  version = ">= 3.63.0"
   region = "us-east-2"
 }
+
+
 
 
 
