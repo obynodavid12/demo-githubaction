@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
-      version = ">= 2.7.0"
+      version = "4.8.0"
       configuration_aliases = [ aws.alternate ]
     }
     random = {
@@ -23,7 +23,7 @@ provider "random" {}
 
 ## Provider us-east-2
 provider "aws" {
-    version = "3.53.0"
+    version = "4.8.0"
     region  = "us-east-2"
 }
 
