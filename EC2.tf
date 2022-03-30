@@ -62,6 +62,17 @@ resource "aws_instance" "awsec2demo" {
     network_interface_id = aws_network_interface.awsec2demo.id
     device_index         = 0
   }
+  user_data = <<-EOF
+              #!/bin/bash
+              sudo apt update -y
+              sudo apt install apache2 -y
+              sudo systemctl start apache2
+              sudo bash -c 'echo obi and nicole very first web server>/var/www/html/index.html'
+              EOF
+  tags = {
+    Name = "ssh-server"
+  }  
+              
 }           
 
 
