@@ -55,7 +55,7 @@ resource "aws_security_group" "allow_ssh" {
 
 ## AWS EC2
 resource "aws_instance" "awsec2demo" {
-  ami           = "ami-015848f7d63c649a5"
+  ami           = "ami-0f597975071f4c4ec"
   instance_type = "t2.micro"
 
   network_interface {
