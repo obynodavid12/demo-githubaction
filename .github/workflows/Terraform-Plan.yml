@@ -45,18 +45,18 @@ jobs:
     - name: Terraform Plan Status 
       if: steps.plan.outcome == 'failure'
       run: exit 1
-      
-    - uses: actions/github-script@v6
-      if: github.event_name == 'push'
-      env:
-        STDOUT: "```${{ steps.plan.outputs.stdout }}```"
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-          github.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: process.env.STDOUT
-          })   
-      
+  comment:
+    runs-on: ubuntu-latest
+    needs: terraform
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/github-script@v5
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 Thanks for reporting!'
+            })
+            
