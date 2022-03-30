@@ -50,7 +50,7 @@ jobs:
     needs: terraform
     if: github.event_name == 'push'
     steps:
-      - uses: actions/github-script@v5
+      - uses: actions/github-script@v6
         with:
           script: |
             github.rest.issues.createComment({
