@@ -34,11 +34,11 @@ resource "aws_security_group" "allow_ssh" {
   name = "allow_ssh_traffic"
   description = "Allow SSH connection"
   vpc_id      = aws_vpc.awsec2demo-vpc.id
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["68.83.212.136/32"]
+  #ingress {
+  #  from_port   = 22
+  #  to_port     = 22
+  #  protocol    = "tcp"
+  #  cidr_blocks = ["68.83.212.136/32"]
   }
   egress {
     from_port   = 0
