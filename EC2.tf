@@ -71,7 +71,7 @@ resource "aws_instance" "awsec2demo" {
               chown -R ubuntu /home/ubuntu/actions-runner
               EOF
   tags = {
-    Name = "ssh-server"
+    Name = "github-runner"
   }  
               
 }           
