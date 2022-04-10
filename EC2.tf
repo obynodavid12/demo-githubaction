@@ -58,6 +58,7 @@ resource "aws_security_group" "allow_ssh" {
 resource "aws_instance" "awsec2demo" {
   ami           = "ami-0f597975071f4c4ec"
   instance_type = "t2.micro"
+  key_pair      = "InstanceConnect"
 
   network_interface {
     network_interface_id = aws_network_interface.awsec2demo.id
