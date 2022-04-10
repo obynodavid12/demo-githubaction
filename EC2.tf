@@ -65,10 +65,10 @@ resource "aws_instance" "awsec2demo" {
   }
   user_data = <<-EOF
               #!/bin/bash
-              sudo apt update -y
-              sudo apt install apache2 -y
-              sudo systemctl start apache2
-              sudo bash -c 'echo obi and nicole very first web server>/var/www/html/index.html'
+              mkdir /home/ubuntu/actions-runner && cd /home/ubuntu/actions-runner || exit
+              curl -o actions-runner-linux-x64-2.289.2.tar.gz -L https://github.com/actions/runner/releases/download/v2.289.2/actions-runner-linux-x64-2.289.2.tar.gz
+              tar xzf ./actions-runner-linux-x64-2.289.2.tar.gz
+              chown -R ubuntu /home/ubuntu/actions-runner
               EOF
   tags = {
     Name = "ssh-server"
